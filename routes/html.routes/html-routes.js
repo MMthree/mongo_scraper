@@ -4,6 +4,10 @@ var router = express.Router();
 
 router.get("/", function (req, res) {
     res.render("index", {});
-})
+});
+
+router.get("/saved-articles", function (req, res) {
+    res.render("saved-articles", {});
+});
 
 module.exports = router;
