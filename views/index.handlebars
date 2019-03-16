@@ -1,22 +1,40 @@
-{{!-- Nav --}}
-  <nav class="transparent">
-    <div class="container">
-        <div class="nav-wrapper">
-        <a href="/" class="brand-logo black-text">MongoScrape</a>
-        <a href="#" data-target="mobile-demo" class="black-text sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a class="black-text" href="/">Home</a></li>
-            <li><a class="black-text" href="/saved-articles">Saved Articles</a></li>
-        </ul>
-        </div>
-    </div>
-  </nav>
-
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="/">Home</a></li>
-    <li><a href="/saved-articles">Saved Articles</a></li>
-  </ul>
+<div class="index">
   {{!-- Nav --}}
+  <div class="navbar-fixed">
+    <nav class="white">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo black-text">MongoScrape</a>
+          <a href="#" data-target="mobile-demo" class="black-text sidenav-trigger"><i
+              class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class="black-text nav-home" href="/">Home</a></li>
+            <li><a class="black-text nav-saved" href="/saved-articles">Saved Articles</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="/">Home</a></li>
+      <li><a href="/saved-articles">Saved Articles</a></li>
+    </ul>
+  </div>
+  {{!-- Nav --}}
+
+  <header>
+    <div class="row">
+      <div class="bc-image">
+        <div class="col s12 center-align">
+          <div class="title">
+            <h1>MongoScraper</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+</div> {{!-- /Index --}}
 
 
 <script src="/js/index.js"></script>

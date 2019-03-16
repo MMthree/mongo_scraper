@@ -1,5 +1,28 @@
 body {
     font-family: 'Oswald', sans-serif;
-    background-color: gainsboro;
 }
 
+/* INDEX */
+.index .nav-home {
+    text-decoration: underline solid black;
+
+}
+
+.index .bc-image {
+    background-image: url("../images/coffee_paper.jpg");
+    height: 300px;
+    width: 100%;
+}
+
+.index .title {
+    background-color: white;
+    width: 400px;
+}
+/* INDEX */
+
+
+/* SAVED */
+.saved .nav-saved {
+    text-decoration: underline solid black;
+}
+/* SAVED */
