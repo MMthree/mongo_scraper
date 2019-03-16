@@ -9,15 +9,50 @@ body {
 }
 
 .index .bc-image {
-    background-image: url("../images/coffee_paper.jpg");
+    background-image: url("../images/verge_wp.png");
     height: 300px;
     width: 100%;
 }
 
 .index .title {
+    text-align: center;
     background-color: white;
     width: 400px;
 }
+
+.index .article-main {
+    height: 100%;
+}
+.index .article {
+    position: relative;
+}
+
+.index .article .headline {
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: -12px;
+    left: 130px;
+}
+
+.index .article-btn {
+    height: 100%;
+}
+.index .saved-false {
+    background-color: black;
+  }
+.index .saved-false:visited{
+    background-color: black;
+  }
+.index .saved-false:hover {
+    background-color: rgb(170, 54, 54);
+  }
+.index .saved-false:active{
+    background-color: rgb(170, 54, 54);
+  }
+.index .saved-false:focus{
+    background-color: rgb(170, 54, 54);
+  }
 /* INDEX */
 
 
