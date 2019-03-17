@@ -5,25 +5,47 @@ body {
 /* INDEX */
 .index .nav-home {
     text-decoration: underline solid black;
+    font-size: 20px;
+}
 
+.index .nav-saved {
+    font-size: 20px;
+}
+
+.index .brand-logo {
+    font-family: 'Bowlby One SC', cursive;
 }
 
 .index .bc-image {
     background-image: url("../images/verge_wp.png");
+    /* background-position: right; */
     z-index: -1;
-    height: 400px;
+    height: 100%;;
+    width: 100%;
 }
 
-.index .title {
+.index .title h1 {
+    font-family: 'Bowlby One SC', cursive;
     text-align: center;
-    background-color: black;
-    color: white;
-    width: 100%;
-    margin: 10px 0 10px 0;
+    /* background-color: black; */
+    color: rgb(224, 222, 222);
+    font-size: 10vw;
+    margin-top: 70px;
+}
+
+.index .title h5 {
+    font-family: 'Bowlby One SC', cursive;
+    text-align: center;
+    /* background-color: black; */
+    color: rgb(224, 222, 222);
+    margin-bottom: 70px;
+    font-size: 3vw;
 }
 
 .index .article-main {
     height: 100%;
+    border: solid 2px black;
+    padding: 5px;
 }
 .index .article {
     position: relative;
@@ -47,13 +69,13 @@ body {
     background-color: black;
   }
 .index .saved-false:hover {
-    background-color: rgb(170, 54, 54);
+    background-color: #dd2c00;
   }
 .index .saved-false:active{
-    background-color: rgb(170, 54, 54);
+    background-color: #dd2c00;
   }
 .index .saved-false:focus{
-    background-color: rgb(170, 54, 54);
+    background-color: #dd2c00;
   }
 /* INDEX */
 
@@ -61,5 +83,10 @@ body {
 /* SAVED */
 .saved .nav-saved {
     text-decoration: underline solid black;
+    font-size: 20px;
+}
+
+.saved .nav-home {
+    font-size: 20px
 }
 /* SAVED */
