@@ -18,7 +18,7 @@ body {
 }
 
 .index .bc-image {
-    background-image: url("../images/verge_wp.png");
+    background-image: url("../images/verge_wp.jpg");
     /* background-position: right; */
     z-index: -1;
     height: 100%;;

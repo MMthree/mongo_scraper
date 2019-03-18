@@ -4,8 +4,8 @@
     <nav class="white">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="/" class="brand-logo black-text"><img class="logo" src="./images/surge_logo.png"></a>
-          <a href="#" data-target="mobile-demo" class="black-text sidenav-trigger"><i
+          <a href="/saved-articles" class="brand-logo black-text"><img class="logo" src="./images/surge_logo.png"></a>
+          <a href="" data-target="mobile-demo" class="black-text sidenav-trigger"><i
               class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a class="black-text nav-home" href="/">Home</a></li>
@@ -53,7 +53,7 @@
           </div>
 
           <div class="col s12 m2 article-btn center-align vertical-align">
-            <button class="btn waves-effect waves-light saved-false pink" data-id="{{this._id}}">Remove</button>
+            <button type="submit" id="remove" class="btn waves-effect waves-light saved-true pink" data-id="{{this._id}}">Remove</button>
           </div>
 
         </div>
@@ -68,4 +68,4 @@
 </div> {{!-- /Index --}}
 
 
-<script src="/js/index.js"></script>
+<script src="/js/saved-articles.js"></script>

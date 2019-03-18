@@ -19,14 +19,8 @@ router.get("/scrape", function (req, res) {
             result.image = $(this).find(".c-picture img").attr("src");
             result.saved = false;
 
-            // verge.push({
-            //     title,
-            //     image,
-            //     link
-            // });
             db.Article.create(result)
                 .then(function(dbArticle) {
-                    console.log(dbArticle);
                 })
                 .catch(function(err) {
                     console.log(err);
@@ -35,6 +29,37 @@ router.get("/scrape", function (req, res) {
     });
     res.json("Scrape Complete")
 });
+
+// Moves Article from index page to saved-articles
+router.post("/articles/:id", function (req, res) {
+    db.Article.findOneAndUpdate({_id: req.params.id}, {$set: {saved: true}})
+    .then(function (dbArticle) {
+        res.json(dbArticle);
+    }).catch(function(err) {
+        console.log(err);
+    });
+});
+
+// Remove articles that have been saved
+router.post("/saved/articles/:id", function (req, res) {
+    db.Article.findOneAndUpdate({_id: req.params.id}, {$set: {saved: false}})
+    .then(function () {
+        res.json({msg: "Removed from saved articles"})
+    }).catch(function (err) {
+        console.log(err);
+    });
+});
+
+// Delete all articles that have not been saved
+router.delete("/clear", function (req, res) {
+    db.Article.deleteMany({saved: false})
+        .then(function() {
+            res.json({msg: "deleted all non saved articles"})
+        }).catch(function (err) {
+            console.log(err);
+        });
+});
+
 
 
 module.exports = router;
