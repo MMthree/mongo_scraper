@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Connect to MongoDb
-var MONGODB_URI = process.env.MONGODV_URI || "mongodb://localhost/surge_db";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/surge_db";
 mongoose.connect(MONGODB_URI);
 
 // Handlebars 
