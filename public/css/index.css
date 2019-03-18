@@ -1,16 +1,16 @@
 body {
-    font-family: 'Oswald', sans-serif;
-    background-image: linear-gradient(to right, rgb(247, 198,38) , rgb(229, 18, 125));
+    font-family: 'Roboto', sans-serif;
+    /* background-image: linear-gradient(to right, rgb(225, 2, 125) , rgb(95, 47, 255)); */
 }
 
 /* INDEX */
 .index .nav-home {
     text-decoration: underline solid black;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .index .nav-saved {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .index .logo {
@@ -21,12 +21,11 @@ body {
     background-image: url("../images/verge_wp.jpg");
     /* background-position: right; */
     z-index: -1;
-    height: 100%;;
     width: 100%;
 }
 
 .index .title h1 {
-    font-family: 'Bowlby One SC', cursive;
+    font-family: 'Alfa Slab One', cursive;
     text-align: center;
     /* background-color: black; */
     color: rgb(255, 255, 255);
@@ -35,7 +34,7 @@ body {
 }
 
 .index .title h6 {
-    font-family: 'Bowlby One SC', cursive;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     /* background-color: black; */
     color: rgb(255, 255, 255);
@@ -68,16 +67,3 @@ body {
 .index .link h5:hover {
     color: rgb(229, 15, 101);
 }
-/* INDEX */
-
-
-/* SAVED */
-.saved .nav-saved {
-    text-decoration: underline solid black;
-    font-size: 20px;
-}
-
-.saved .nav-home {
-    font-size: 20px
-}
-/* SAVED */

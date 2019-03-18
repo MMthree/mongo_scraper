@@ -5,8 +5,7 @@
       <div class="container">
         <div class="nav-wrapper">
           <a href="/saved-articles" class="brand-logo black-text"><img class="logo" src="./images/surge_logo.png"></a>
-          <a href="" data-target="mobile-demo" class="black-text sidenav-trigger"><i
-              class="material-icons">menu</i></a>
+          <a href="" data-target="mobile-demo" class="black-text sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a class="black-text nav-home" href="/">Home</a></li>
             <li><a class="black-text nav-saved" href="/saved-articles">Saved Articles</a></li>
@@ -16,8 +15,8 @@
     </nav>
   </div>
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="/">Home</a></li>
-    <li><a href="/saved-articles">Saved Articles</a></li>
+    <li><a class="white-text" href="/">Home</a></li>
+    <li><a class="white-text" href="/saved-articles">Saved Articles</a></li>
   </ul>
 
   {{!-- Nav --}}
@@ -26,7 +25,7 @@
     <div class="row">
       <div class="col s12 bc-image  center-align">
         <div class="title">
-          <h1>The Surge</h1>
+          <h1>THE SURGE</h1>
         </div>
         <div class="title center">
           <h6>Discuss articles collected from theVerge.com</h6>
@@ -40,32 +39,49 @@
 
     {{#each Article}}
 
-      {{#if saved}}
+    {{#if saved}}
 
-        <div class="row article-main center-align">
+    <div class="row article-main center-align">
 
-          <div class="col s12 m3">
-            <img class="article image" src="{{image}}">
-          </div>
+      <div class="col s12 m3">
+        <img class="article image" src="{{image}}">
+      </div>
 
-          <div class="col s12 m7 article">
-            <a class="link" href="{{link}}" target="_blank"><h5 class="article headline">{{headline}}</h5></a>
-          </div>
+      <div class="col s12 m7 article">
+        <a class="link" href="{{link}}" target="_blank">
+          <h5 class="article headline">{{headline}}</h5>
+        </a>
+      </div>
 
-          <div class="col s12 m2 article-btn center-align vertical-align">
-            <button type="submit" id="remove" class="btn waves-effect waves-light saved-true pink" data-id="{{this._id}}">Remove</button>
-          </div>
+      <div class="col s12 m2 article-btn center-align vertical-align">
+        <button type="submit" id="discuss" class="btn waves-effect waves-light saved-true pink modal-trigger"
+          data-target="modal1" data-id="{{this._id}}">Discuss</button>
+        <button type="submit" id="remove" class="remove btn waves-effect waves-light saved-true pink"
+          data-id="{{this._id}}">Remove</button>
+      </div>
 
-        </div>
+    </div>
 
-      {{/if}}
+    {{/if}}
 
     {{/each}}
 
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
+
   </div> {{!-- /Container --}}
 
-
-</div> {{!-- /Index --}}
+</div> {{!-- /Saved --}}
 
 
 <script src="/js/saved-articles.js"></script>

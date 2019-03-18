@@ -4,8 +4,14 @@ $(document).ready(function(){
     var sideNav = document.querySelectorAll('.sidenav');
      M.Sidenav.init(sideNav, {});
 
+     // Materialize Modal
+     var comments = document.querySelectorAll('.modal');
+     M.Modal.init(comments, {});
+ 
+             
+
      // Save Article
-     $(".saved-true").on("click", function() {
+     $(".remove").on("click", function() {
 
         var ID = $(this).data("id");
   

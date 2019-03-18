@@ -15,8 +15,8 @@
     </nav>
   </div>
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="/">Home</a></li>
-    <li><a href="/saved-articles">Saved Articles</a></li>
+    <li><a class="white-text" href="/">Home</a></li>
+    <li><a class="white-text" href="/saved-articles">Saved Articles</a></li>
   </ul>
 
   {{!-- Nav --}}
@@ -25,7 +25,7 @@
     <div class="row">
       <div class="col s12 bc-image  center-align">
         <div class="title">
-          <h1>The Surge</h1>
+          <h1>THE SURGE</h1>
         </div>
         <div class="title center">
           <h6>Discuss articles collected from theVerge.com</h6>
@@ -48,6 +48,12 @@
 
 
   <div class="container">
+
+    {{!-- Loading Gif --}}
+    <div class="row">
+      <div class="center-align loading"></div>
+    </div>
+
     <div id="articles">
       {{#each Article}}
 
