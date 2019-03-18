@@ -1,22 +1,23 @@
 body {
     font-family: 'Oswald', sans-serif;
+    background-image: linear-gradient(to right, rgb(247, 198,38) , rgb(229, 18, 125));
 }
 
 /* INDEX */
-.index .nav-home {
+.saved .nav-home {
     text-decoration: underline solid black;
     font-size: 20px;
 }
 
-.index .nav-saved {
+.saved .nav-saved {
     font-size: 20px;
 }
 
-.index .brand-logo {
-    font-family: 'Bowlby One SC', cursive;
+.saved .logo {
+    height: 50px;
 }
 
-.index .bc-image {
+.saved .bc-image {
     background-image: url("../images/verge_wp.png");
     /* background-position: right; */
     z-index: -1;
@@ -24,59 +25,49 @@ body {
     width: 100%;
 }
 
-.index .title h1 {
+.saved .title h1 {
     font-family: 'Bowlby One SC', cursive;
     text-align: center;
     /* background-color: black; */
-    color: rgb(224, 222, 222);
+    color: rgb(255, 255, 255);
     font-size: 10vw;
     margin-top: 70px;
 }
 
-.index .title h5 {
+.saved .title h6 {
     font-family: 'Bowlby One SC', cursive;
     text-align: center;
     /* background-color: black; */
-    color: rgb(224, 222, 222);
+    color: rgb(255, 255, 255);
     margin-bottom: 70px;
     font-size: 3vw;
 }
 
-.index .article-main {
+.saved .article-main {
     height: 100%;
+    background-color: black;
     border: solid 2px black;
     padding: 5px;
-}
-.index .article {
-    position: relative;
+    margin-bottom: 3px;
 }
 
-.index .article .headline {
+.saved .image {
+    width: 100%;
+}
+
+.saved .article .headline {
     background-color: black;
     color: white;
-    position: absolute;
-    top: -12px;
-    left: 130px;
 }
 
-.index .article-btn {
-    height: 100%;
+.saved .article-btn {
+    width: 100%;
+    margin-top: 5%;    
 }
-.index .saved-false {
-    background-color: black;
-  }
-.index .saved-false:visited{
-    background-color: black;
-  }
-.index .saved-false:hover {
-    background-color: #dd2c00;
-  }
-.index .saved-false:active{
-    background-color: #dd2c00;
-  }
-.index .saved-false:focus{
-    background-color: #dd2c00;
-  }
+
+.saved .link h5:hover {
+    color: rgb(229, 15, 101);
+}
 /* INDEX */
 
 
