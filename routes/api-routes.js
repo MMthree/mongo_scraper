@@ -30,6 +30,16 @@ router.get("/scrape", function (req, res) {
     res.json("Scrape Complete")
 });
 
+router.get("/articles/:id", function (req, res){
+    db.Article.findOne({_id: req.params.id})
+    .populate("comment")
+    .then(function (dbArticle) {
+        res.json(dbArticle)
+    }).catch(function (err) {
+        console.log(err);
+    });
+});
+
 // Moves Article from index page to saved-articles
 router.post("/articles/:id", function (req, res) {
     db.Article.findOneAndUpdate({_id: req.params.id}, {$set: {saved: true}})
@@ -49,6 +59,18 @@ router.post("/saved/articles/:id", function (req, res) {
         console.log(err);
     });
 });
+
+// Save comment added to saved article
+router.post("/comment/:id", function (req, res) {
+    db.Comment.create({name: req.body.name, text: req.body.text})
+        .then(function(dbComment) {
+        return db.Article.findOneAndUpdate({_id: req.params.id}, {comment: dbComment._id}, {new: true});
+        }).then(function (dbArticle) {
+            res.json(dbArticle)
+        }).catch(function (err) {
+            console.log(err);
+        });
+});   
 
 // Delete all articles that have not been saved
 router.delete("/clear", function (req, res) {

@@ -38,7 +38,7 @@
       }).then(function () {
 
         // Play Loading gif while we Scrape data
-        $(".loading").append("<img src='https://ya-webdesign.com/images/minimalist-transparent-loading-gif-6.gif' width='300'>")
+        $(".loading").append("<img src='./images/loading.gif' width='300'>")
 
         setTimeout(function(){
           location.reload(); 

@@ -8,9 +8,9 @@ var ArticleSchema = new Schema({
     link: String,
     image: String,
     saved: false,
-    note: {
+    comment: {
         type: Schema.Types.ObjectId,
-        ref: "Note"
+        ref: "Comment"
     }
 });
 

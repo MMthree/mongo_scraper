@@ -18,14 +18,16 @@ router.get("/", function (req, res) {
 });
 
 router.get("/saved-articles", function (req, res) {
+
     db.Article.find({})
     .then(function(dbArticle) {
         var hbsobj = {Article: dbArticle}
-            res.render("saved-articles", hbsobj);
+        res.render("saved-articles", hbsobj);
     })
     .catch(function(err) {
         console.log(err);
     })
 });
+
 
 module.exports = router;
