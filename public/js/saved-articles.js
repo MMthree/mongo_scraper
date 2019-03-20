@@ -14,9 +14,9 @@ $(document).ready(function () {
 
     function dataLoop (data) {
         console.log(data);
+        $(".comments").empty();
         for (var i = 0; i < data.comment.length; i++) {
-            console.log(data.comment[i].name);
-            $(".comments").append("<div class='eachComment'><p>" + "<strong>" + data.comment[i].name + "</strong>" + ":  " +  data.comment[i].text + "</p></div><hr>");
+            $(".comments").append("<div class='eachComment'><h6>"+ data.comment[i].name + "</h6><p>" +  data.comment[i].text + "</p></div><hr>");
 
         }
     }
@@ -47,7 +47,7 @@ $(document).ready(function () {
             type: "GET"
         }).then(function (data) {
             console.log(data);
-
+            
             dataLoop(data);
         });
     });
@@ -67,8 +67,8 @@ $(document).ready(function () {
         }).then(function (data) {
             $("#modal-name").val("");
             $("#modal-textarea").val("");
+            $(".comments").append("<div class='eachComment'><h6>"+ name + "</h6><p>" +  text + "</p></div><hr>");
 
-            $(".comments").append("<div><h6>" + name + ":  " + "</h6><h6>" + text + "</h6a></div><hr>");
 
         });
     });

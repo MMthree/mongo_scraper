@@ -68,20 +68,49 @@ body {
     font-size: 15px
 }
 
-.eachComment {
+#modal1 {
+    background-image: linear-gradient(to right, rgb(247, 198,38) , rgb(229, 18, 125));
+}
 
+.comments { 
+    background-color: black;
+    color: white;
+}
+.eachComment h6{
+    color: rgb(229, 18, 125);
+    font-weight: bold;
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+.eachComment p{
+    margin-top: 0;
 }
 
 .comments hr {
     border-color: #e91e63;
 }
 
+.comment-form {
+    background-color: black;
+    padding-top:20px;
+}
+
+.input-field {
+    color: white;
+}
+
 .input-field label {
-    color: #000;
+    color: #e91e63;
 }
 
 .input-field input[type=text]:focus + label {
     color: #e91e63 !important;
+}
+
+.input-field input[type=text] {
+    border-bottom: 1px solid #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
 }
 
 .input-field input[type=text]:focus {
@@ -92,8 +121,18 @@ body {
 .input-field textarea:focus + label {
     color: #e91e63 !important;
 }
+
+.input-field textarea {
+    border-bottom: 1px solid #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+
 .input-field textarea:focus {
     border-bottom: 1px solid #e91e63 !important;
     box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+
+.c-submit-div {
+    margin-top: 0;
 }
 

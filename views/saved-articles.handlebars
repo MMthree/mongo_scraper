@@ -66,30 +66,30 @@
     <div id="modal1" class="modal">
       <div class="container">
       <div class="modal-content">
-
+        <div>
+          <h4>{{Article.headline}}</h4>
+        </div>
         <div class="row">
           <div class="col s12 comments">
             {{!-- This is were comments will go --}}
           </div>
         </div>
 
-      </div>
-        <div class="row">
+      
+        <div class="row comment-form">
           <form class="col s12">
             <div class="row">
               <div class="input-field col s6">
-                <input id="modal-name" type="text" class="validate" minlength="1" maxlength="20">
+                <input id="modal-name" type="text" class="validate white-text" minlength="1" maxlength="20">
                 <label for="modal-name">Name</label>
               </div>
-            </div>
-            <div class="row">
               <div class="input-field col s12">
-                <textarea id="modal-textarea" class="materialize-textarea validate" minlength="1" maxlength="280" data-length="280"></textarea>
+                <textarea id="modal-textarea" class="materialize-textarea validate white-text" minlength="1" maxlength="280" data-length="280"></textarea>
                 <label for="modal-textarea">Textarea</label>
               </div>
-            </div>
-            <div class="row">
+              <div class="input-field col s12 c-submit-div">
               <button class="btn waves-effect waves-light pink comment-submit" type="button">Submit</button>
+              </div>
             </div>
           </form>
         </div>
