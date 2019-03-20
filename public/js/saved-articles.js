@@ -12,25 +12,22 @@ $(document).ready(function () {
     var textNeedCount = document.querySelectorAll('#modal-textarea');
     M.CharacterCounter.init(textNeedCount, {});
 
+    function dataLoop (data) {
+        console.log(data);
+        for (var i = 0; i < data.comment.length; i++) {
+            console.log(data.comment[i].name);
+            $(".comments").append("<div class='eachComment'><p>" + "<strong>" + data.comment[i].name + "</strong>" + ":  " +  data.comment[i].text + "</p></div><hr>");
 
+        }
+    }
 
     // Pass data-id to modal
     $(".discuss").on("click", function () {
         var id = $(this).data('id');
         $(".comment-submit").attr("data-id", id);
-
-        $.ajax("/api/articles/" + id, {
-            type: "GET"
-        }).then(function (data) {
-            console.log(data.comment.name);
-            // Get comment data and post to modal
-            $(".comments").append("<h1>yo</h1>")
-            for (i = 0; i < data.length; i++) {
-                console.log("at")
-                $(".comments").append("<div><h6>" + data[i].comment.name + "</h6><h6>" + data.comment[i].text + "</h6><hr></div>")
-            }
-        });
     });
+    
+    
 
     // Remove Article
     $(".remove").on("click", function () {
@@ -41,6 +38,17 @@ $(document).ready(function () {
             type: "POST",
         }).then(function () {
             location.reload();
+        });
+    });
+
+    $(".discuss").on("click", function () {
+        var id = $(this).data("id");
+        $.ajax("/api/articles/comments/" + id, {
+            type: "GET"
+        }).then(function (data) {
+            console.log(data);
+
+            dataLoop(data);
         });
     });
 
@@ -56,7 +64,12 @@ $(document).ready(function () {
                 name,
                 text
             }
-        }).then(function () {
+        }).then(function (data) {
+            $("#modal-name").val("");
+            $("#modal-textarea").val("");
+
+            $(".comments").append("<div><h6>" + name + ":  " + "</h6><h6>" + text + "</h6a></div><hr>");
+
         });
     });
 

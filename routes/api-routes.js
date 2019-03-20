@@ -40,6 +40,16 @@ router.get("/articles/:id", function (req, res){
     });
 });
 
+router.get("/articles/comments/:id", function (req, res){
+    db.Article.findOne({_id: req.params.id})
+    .populate("comment")
+    .then(function (dbArticle) {
+        res.json(dbArticle)
+    }).catch(function (err) {
+        console.log(err);
+    });
+});
+
 // Moves Article from index page to saved-articles
 router.post("/articles/:id", function (req, res) {
     db.Article.findOneAndUpdate({_id: req.params.id}, {$set: {saved: true}})
@@ -53,7 +63,7 @@ router.post("/articles/:id", function (req, res) {
 // Remove articles that have been saved
 router.post("/saved/articles/:id", function (req, res) {
     db.Article.findOneAndUpdate({_id: req.params.id}, {$set: {saved: false}})
-    .then(function () {
+    .then(function (data) {
         res.json({msg: "Removed from saved articles"})
     }).catch(function (err) {
         console.log(err);
@@ -64,7 +74,7 @@ router.post("/saved/articles/:id", function (req, res) {
 router.post("/comment/:id", function (req, res) {
     db.Comment.create({name: req.body.name, text: req.body.text})
         .then(function(dbComment) {
-        return db.Article.findOneAndUpdate({_id: req.params.id}, {comment: dbComment._id}, {new: true});
+        return db.Article.findOneAndUpdate({_id: req.params.id}, {$push: {comment: dbComment._id}}, {new: true});
         }).then(function (dbArticle) {
             res.json(dbArticle)
         }).catch(function (err) {
