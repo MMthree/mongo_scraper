@@ -12,22 +12,24 @@ $(document).ready(function () {
     var textNeedCount = document.querySelectorAll('#modal-textarea');
     M.CharacterCounter.init(textNeedCount, {});
 
-    function dataLoop (data) {
-        console.log(data);
+    function dataLoop(data) {
+        var numofComments = 0;
         $(".comments").empty();
-        for (var i = 0; i < data.comment.length; i++) {
-            $(".comments").append("<div class='eachComment'><h6>"+ data.comment[i].name + "</h6><p>" +  data.comment[i].text + "</p></div><hr>");
 
-        }
-    }
+        for (var i = 0; i < data.comment.length; i++) {
+            numofComments++;
+            $(".comments").append("<div class='eachComment'><h6>" + data.comment[i].name + "</h6><p>" + data.comment[i].text + "</p></div><hr>");
+        };
+        $(".numOfComments").text(numofComments);
+    };
 
     // Pass data-id to modal
     $(".discuss").on("click", function () {
         var id = $(this).data('id');
         $(".comment-submit").attr("data-id", id);
     });
-    
-    
+
+
 
     // Remove Article
     $(".remove").on("click", function () {
@@ -47,7 +49,6 @@ $(document).ready(function () {
         $.ajax("/api/articles/comments/" + id, {
             type: "GET"
         }).then(function (data) {
-            console.log(data);
             $(".comment-headline").text(data.headline)
             dataLoop(data);
         });
@@ -58,24 +59,24 @@ $(document).ready(function () {
         var name = $("#modal-name").val().trim();
         var text = $("#modal-textarea").val().trim();
         var id = $(this).data("id");
+        console.log(name, text);
 
         if (name || text === "") {
             alert("Name or Textarea cannot be empty")
-        }else {
-        $.ajax("/api/comment/" + id, {
-            type: "POST",
-            data: {
-                name,
-                text
-            }
-        }).then(function (data) {
-            $("#modal-name").val("");
-            $("#modal-textarea").val("");
-            $(".comments").append("<div class='eachComment'><h6>"+ name + "</h6><p>" +  text + "</p></div><hr>");
-
-
-        });
-    }
+        } 
+        else {
+            $.ajax("/api/comment/" + id, {
+                type: "POST",
+                data: {
+                    name,
+                    text
+                }
+            }).then(function (data) {
+                $("#modal-name").val("");
+                $("#modal-textarea").val("");
+                $(".comments").append("<div class='eachComment'><h6>" + name + "</h6><p>" + text + "</p></div><hr>");
+            });
+        }
     });
 
 
