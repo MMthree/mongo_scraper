@@ -41,13 +41,14 @@ $(document).ready(function () {
         });
     });
 
+    // Get back the Article and all comments associated with it
     $(".discuss").on("click", function () {
         var id = $(this).data("id");
         $.ajax("/api/articles/comments/" + id, {
             type: "GET"
         }).then(function (data) {
             console.log(data);
-            
+            $(".comment-headline").text(data.headline)
             dataLoop(data);
         });
     });
@@ -58,6 +59,9 @@ $(document).ready(function () {
         var text = $("#modal-textarea").val().trim();
         var id = $(this).data("id");
 
+        if (name || text === "") {
+            alert("Name or Textarea cannot be empty")
+        }else {
         $.ajax("/api/comment/" + id, {
             type: "POST",
             data: {
@@ -71,6 +75,7 @@ $(document).ready(function () {
 
 
         });
+    }
     });
 
 

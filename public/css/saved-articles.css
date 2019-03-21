@@ -72,12 +72,28 @@ body {
     background-image: linear-gradient(to right, rgb(247, 198,38) , rgb(229, 18, 125));
 }
 
+.comment-body {
+    margin-bottom: 10px;
+}
+
+.comment-headline{
+    background-color: black;
+    color: #e91e63;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.comments-header {
+    background-color: black;
+}
+
 .comments { 
     background-color: black;
     color: white;
 }
 .eachComment h6{
-    color: rgb(229, 18, 125);
+    color: #e91e63;
     font-weight: bold;
     margin-top: 14px;
     margin-bottom: 0;
@@ -136,3 +152,18 @@ body {
     margin-top: 0;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #e91e63; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(247, 198,38); 
+    border-radius: 10px;
+  }
