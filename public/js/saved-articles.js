@@ -56,15 +56,13 @@ $(document).ready(function () {
 
     // Post user comments
     $(".comment-submit").on("click", function () {
-        var name = $("#modal-name").val().trim();
-        var text = $("#modal-textarea").val().trim();
+        var name = $(".modal-name").val().trim();
+        var text = $(".modal-textarea").val().trim();
         var id = $(this).data("id");
-        console.log(name, text);
 
-        if (name || text === "") {
-            alert("Name or Textarea cannot be empty")
-        } 
-        else {
+        if (name === "" || text === "") {
+            console.log("Name or Textarea cannot be empty");
+        }else {
             $.ajax("/api/comment/" + id, {
                 type: "POST",
                 data: {
@@ -72,12 +70,23 @@ $(document).ready(function () {
                     text
                 }
             }).then(function (data) {
-                $("#modal-name").val("");
-                $("#modal-textarea").val("");
+                $(".modal-name").val("");
+                $(".modal-textarea").val("");
                 $(".comments").append("<div class='eachComment'><h6>" + name + "</h6><p>" + text + "</p></div><hr>");
             });
         }
     });
 
+
+    $(".test-button").on("click", function () {
+        var ab = $(".test-input").val().trim();
+        var cd = $(".test-textarea").val().trim();
+        console.log(ab, cd)
+        if (ab === "") {
+            console.log("nope");
+        } else {
+            console.log("yes")
+        }
+    })
 
 });

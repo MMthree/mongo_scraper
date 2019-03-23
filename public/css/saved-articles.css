@@ -82,7 +82,7 @@ body {
 }
 
 .comments-header h5 {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .comments { 
@@ -109,9 +109,6 @@ body {
     padding-top:20px;
 }
 
-.input-field {
-    color: white;
-}
 
 .input-field label {
     color: #e91e63;
