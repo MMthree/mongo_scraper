@@ -7,12 +7,11 @@ body {
     height: 50px;
 }
 
-.saved .bc-image {
-    background-image: url("../images/verge_wp.jpg");
-    /* background-position: right; */
+.bc-image {
+    background-image: linear-gradient(to right, rgb(28, 27, 37) , rgb(37, 22, 30));
+    background-image: url("../images/ts_wp.jpg");
     z-index: -1;
-    
-    width: 100%;
+    background-size: cover;
 }
 
 .saved .title h1 {
@@ -60,11 +59,13 @@ body {
 }
 
 .saved .nav-saved {
-    text-decoration: underline solid black;
+    color: #ff019b;
+    text-decoration: underline solid #e91e63;
     font-size: 15px;
 }
 
 .saved .nav-home {
+    color: #ff019b;
     font-size: 15px
 }
 
