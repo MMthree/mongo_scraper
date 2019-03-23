@@ -61,7 +61,7 @@ $(document).ready(function () {
         var id = $(this).data("id");
 
         if (name === "" || text === "") {
-            console.log("Name or Textarea cannot be empty");
+            alert("Name or Textarea cannot be empty");
         }else {
             $.ajax("/api/comment/" + id, {
                 type: "POST",
@@ -76,17 +76,5 @@ $(document).ready(function () {
             });
         }
     });
-
-
-    $(".test-button").on("click", function () {
-        var ab = $(".test-input").val().trim();
-        var cd = $(".test-textarea").val().trim();
-        console.log(ab, cd)
-        if (ab === "") {
-            console.log("nope");
-        } else {
-            console.log("yes")
-        }
-    })
 
 });

@@ -3,6 +3,10 @@ body {
     background-image: linear-gradient(to right, rgb(247, 198,38) , rgb(229, 18, 125));
 }
 
+.navbar-fixed {
+    width: 100%;
+}
+
 .saved .logo {
     height: 50px;
 }
@@ -59,13 +63,11 @@ body {
 }
 
 .saved .nav-saved {
-    color: #ff019b;
     text-decoration: underline solid #e91e63;
     font-size: 15px;
 }
 
 .saved .nav-home {
-    color: #ff019b;
     font-size: 15px
 }
 
@@ -107,7 +109,7 @@ body {
 }
 
 .comment-form {
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 
