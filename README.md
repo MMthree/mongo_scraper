@@ -1,6 +1,7 @@
 <p align="center"><img src="./public/images/ts_header.jpg" alt="Full Circle Preview" width="650"></p>
+<p align="center"><a href="https://the-surge.herokuapp.com/" alt="Contributors"><img src="https://img.shields.io/badge/Visit-The%20Surge-ff69b4.svg" /></a></p>
 
-## About
+## About 
 
 The Surge will visit theverge.com homepage behind the scenes and return with an image, link, and title of the top articles.
 
